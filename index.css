@@ -1,0 +1,168 @@
+body {
+  font-family: "Open Sans";
+  background-color: rgb(190, 190, 190);
+  font-family: "Montserrat", sans-serif;
+}
+
+.modern-form,
+.form2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+  background-color: mediumslateblue;
+  border: solid 1px rgb(51, 50, 50);
+  padding: 0px 10px;
+  border-radius: 15px;
+}
+
+.modern-form h1,
+.form2 h1,
+.form2 h4 {
+  text-align: center;
+  color: white;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.modern-form input,
+.form2 input {
+  width: auto;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 30%;
+  margin-right: 30%;
+  outline: none;
+  border: none;
+  background-color: white;
+}
+
+.modern-form input[type="submit"],
+.form2 input[type="submit"] {
+  box-sizing: content-box;
+  background-color: white;
+  color: mediumslateblue;
+  font-size: xx-large;
+  font-weight: 700;
+  cursor: pointer;
+  width: auto;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.modern-form input[type="submit"]:hover,
+.form2 input[type="submit"]:hover {
+  background-color: rgb(197, 197, 197);
+  transform: scale(1.1);
+  transition: ease-in-out 150ms;
+}
+
+input[type="button"] {
+  margin: 10px 0 20px 162px;
+  padding: 0;
+  width: 169px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.float-label-field label {
+  opacity: 0.5;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  transition: all 0.2s ease;
+  font-size: 18px;
+}
+
+.float-label-field.focus label {
+  color: orange;
+}
+
+input:focus {
+  border-bottom: solid 1px orange;
+}
+
+.eps1 {
+  color: black;
+  align-self: center;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.form2 {
+  flex-direction: column;
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modern-form h2,
+.form2 h2 {
+  color: white;
+  font-size: xx-large;
+  text-align: center;
+}
+
+.modern-form h2:hover,
+.form2 h2:hover {
+  color: rgb(192, 192, 192);
+  transition: ease-in-out 200ms;
+}
+
+.form2 .submit {
+  padding: 10px;
+  width: 41%;
+}
+
+.form2 h1 {
+  color: white;
+  margin: 10px 0px 10px 0;
+}
+
+td {
+  color: white;
+  font-size: larger;
+  margin: auto;
+  align-content: center;
+}
+
+table,
+td {
+  color: white;
+  font-size: larger;
+  margin: auto;
+  align-content: center;
+  border: 1px solid;
+}
+
+.form2 h4 {
+  text-align: center;
+  font-size: x-large;
+  margin: 5px;
+}
+
+.d-none {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .modern-form {
+    width: 100%;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

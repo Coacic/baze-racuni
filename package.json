@@ -1,0 +1,27 @@
+{
+  "name": "baze-racuni",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coacic/baze-racuni.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coacic/baze-racuni/issues"
+  },
+  "homepage": "https://github.com/Coacic/baze-racuni#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mysql": "^2.18.1",
+    "node": "^17.4.0",
+    "pm2": "^5.1.2"
+  }
+}

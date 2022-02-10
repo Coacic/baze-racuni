@@ -166,3 +166,12 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.responseText {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.tableForm {
+  margin-top: 5px;
+}

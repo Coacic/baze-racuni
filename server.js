@@ -5,6 +5,7 @@ const cors = require("cors");
 const { CreatePool, createPool } = require("mysql");
 const { route } = require("express/lib/router");
 const { response } = require("express");
+const { send } = require("process");
 app.use(cors());
 app.use(express.json());
 const pool = createPool({
@@ -19,6 +20,17 @@ let datum;
 app.post("/index.html", (req, res) => {
   //console.log(req.body);
   //EPS1
+
+  let queryResp = pool.query(
+    `SELECT * FROM racuni WHERE Datum = "${req.body.date}"`,
+    (err, result, rows) => {
+      console.log(result);
+      if (rows != 0) {
+        return;
+      }
+    }
+  );
+
   pool.query(
     `INSERT INTO racuni (Naziv, Datum, Cena) VALUES ("EPS1", "${req.body.date}", ${req.body.eps1})`
   );
@@ -48,9 +60,7 @@ app.post("/index.html", (req, res) => {
     `INSERT INTO racuni (Naziv, Datum, Cena) VALUES ("H", "${req.body.date}", ${req.body.h})`
   );
 
-  //pool.query(
-  //  `INSERT INTO baza (eps1, eps2, eps3, vvik, mts, h) VALUES (${req.body.eps1}, ${req.body.eps2}, ${req.body.eps3}, ${req.body.vvik}, ${req.body.mts}, ${req.body.h})`
-  // );
+  res.send();
 });
 
 // app.post("/racuni.html", (req, res) => {

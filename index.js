@@ -19,7 +19,9 @@ document.querySelector(".submit").addEventListener("click", (e) => {
     body: JSON.stringify(data),
   }).then((response) => {
     console.log(response);
-    addResponse();
+    response.json().then((data) => {
+      console.log(data);
+    });
   });
 });
 

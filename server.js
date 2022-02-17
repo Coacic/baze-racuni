@@ -6,6 +6,7 @@ const { CreatePool, createPool } = require("mysql");
 const { route } = require("express/lib/router");
 const { response } = require("express");
 const { send } = require("process");
+const { NULL } = require("mysql/lib/protocol/constants/types");
 app.use(cors());
 app.use(express.json());
 const pool = createPool({
@@ -20,16 +21,22 @@ let datum;
 app.post("/index.html", (req, res) => {
   //console.log(req.body);
   //EPS1
-
-  let queryResp = pool.query(
+  let queryResp = false;
+  let isTrue = "true";
+  pool.query(
     `SELECT * FROM racuni WHERE Datum = "${req.body.date}"`,
-    (err, result, rows) => {
+    (err, result) => {
       console.log(result);
-      if (rows != 0) {
-        return;
+      if (result == undefined) {
+        queryResp = true;
+        console.log("Res");
+      } else {
+        console.log("NoRes");
       }
     }
   );
+
+  console.log("*");
 
   pool.query(
     `INSERT INTO racuni (Naziv, Datum, Cena) VALUES ("EPS1", "${req.body.date}", ${req.body.eps1})`
@@ -77,7 +84,7 @@ app.post("/racuni.html", (req, res) => {
   pool.query(
     `SELECT Datum, SUM(Cena) AS "Rashod" FROM Racuni GROUP BY Datum ORDER BY Datum`,
     (error, data) => {
-      console.log(data);
+      // console.log(data);
       res.send(data);
     }
   );
